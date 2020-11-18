@@ -137,7 +137,7 @@
       _react2.default.createElement(
         "text",
         { textAnchor: "middle", style: { pointerEvents: "none" }, x: textX, y: textY },
-        props.state
+        props.stateName
       )
     );
   };
