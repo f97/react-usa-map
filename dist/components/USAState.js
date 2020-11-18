@@ -25,7 +25,7 @@
     };
   }
 
-  var _slicedToArray = (function () {
+  var _slicedToArray = function () {
     function sliceIterator(arr, i) {
       var _arr = [];
       var _n = true;
@@ -57,32 +57,32 @@
         return arr;
       } else if (Symbol.iterator in Object(arr)) {
         return sliceIterator(arr, i);
-      } 
-      throw new TypeError("Invalid attempt to destructure non-iterable instance");
-      
+      } else {
+        throw new TypeError("Invalid attempt to destructure non-iterable instance");
+      }
     };
-  }());
+  }();
 
   function useDims(ref) {
     var isSvg = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
 
     var _useState = (0, _react.useState)({
-        height: 0,
-        width: 0,
-        top: 0,
-        left: 0
-      }),
-      _useState2 = _slicedToArray(_useState, 2),
-      dim = _useState2[0],
-      setDim = _useState2[1];
+      height: 0,
+      width: 0,
+      top: 0,
+      left: 0
+    }),
+        _useState2 = _slicedToArray(_useState, 2),
+        dim = _useState2[0],
+        setDim = _useState2[1];
 
     (0, _react.useLayoutEffect)(function () {
       if (ref && ref.current) {
         var _ref$current$getBBox = ref.current.getBBox(),
-          height = _ref$current$getBBox.height,
-          width = _ref$current$getBBox.width,
-          x = _ref$current$getBBox.x,
-          y = _ref$current$getBBox.y;
+            height = _ref$current$getBBox.height,
+            width = _ref$current$getBBox.width,
+            x = _ref$current$getBBox.x,
+            y = _ref$current$getBBox.y;
 
         setDim({
           height: height,
@@ -106,10 +106,10 @@
     var stateRef = _react2.default.useRef(null);
 
     var _useDims = useDims(stateRef),
-      width = _useDims.width,
-      height = _useDims.height,
-      top = _useDims.top,
-      left = _useDims.left;
+        width = _useDims.width,
+        height = _useDims.height,
+        top = _useDims.top,
+        left = _useDims.left;
 
     var offset = props.offset;
 
